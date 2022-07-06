@@ -1,0 +1,27 @@
+{
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "prettier"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "import/no-cycle": "off",
+        "no-param-reassign": "off"
+    },
+    "env": {
+        "browser": true
+    },
+    "ignorePatterns": []
+}
