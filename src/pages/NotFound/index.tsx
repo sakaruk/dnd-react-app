@@ -9,8 +9,10 @@ function NotFound() {
   return (
     <>
       <Header />
+
       <Container>
         <h1>Sorry we did not find the content you were looking for.</h1>
+
         <p>
           <Link to="/">Go to homepage</Link>
         </p>

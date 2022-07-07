@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Container from '@mui/material/Container';
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import Header from '../../components/common/Header';
 
@@ -9,10 +8,12 @@ function About() {
   return (
     <>
       <Header />
+
       <Container>
         <Typography variant="h2" component="h1" gutterBottom>
           About the app
         </Typography>
+
         <Typography variant="body1" color="text.secondary">
           This is a React App that gets <strong>Spells</strong> from{' '}
           <a href="http://www.dnd5eapi.co/" target="_blank" rel="noreferrer">
