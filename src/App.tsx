@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <div className="App">
+      {/* Different routes are linked to respected components */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
