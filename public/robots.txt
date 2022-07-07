@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+# Disallow everything and don't let the search bot index
+
 User-agent: *
-Disallow:
+Disallow: /
