@@ -33,6 +33,7 @@ function SpellDetail() {
             <Stack direction="row" spacing={1}>
               {spellDetail.classes.map((spellClass: SpellType.Class) => (
                 <Chip
+                  key={spellClass.index}
                   label={spellClass.name}
                   color="primary"
                   variant="outlined"
@@ -51,6 +52,7 @@ function SpellDetail() {
             <Stack direction="row" sx={{ justifySelf: 'end' }} spacing={1}>
               {spellDetail.subclasses.map((spellSubClass: SpellType.SubClass) => (
                 <Chip
+                  key={spellSubClass.index}
                   label={spellSubClass.name}
                   size="small"
                   color="secondary"
