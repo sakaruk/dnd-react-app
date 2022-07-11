@@ -1,4 +1,4 @@
-import SpellType from '../lib/spell-types';
+import SpellType from '../types/spell-types';
 
 export const spellData: SpellType.List = {
   count: 5,

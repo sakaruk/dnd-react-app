@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Chip, Container, Grid, Stack, Typography } from '@mui/material';
 
 import Header from '../../components/common/Header';
-import SpellType from '../../lib/spell-types';
+import SpellType from '../../types/spell-types';
 import { spellDetail } from '../../mockData/spells';
 
 function SpellDetail() {

@@ -17,7 +17,7 @@ import { Star, Search as SearchIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/common/Header';
-import SpellType from '../../lib/spell-types';
+import SpellType from '../../types/spell-types';
 import { spellData } from '../../mockData/spells';
 
 function Home() {

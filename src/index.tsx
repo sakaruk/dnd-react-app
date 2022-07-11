@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import { Provider } from 'react-redux';
 
-import { store } from './lib/store';
+import store from './lib/store';
 import theme from './lib/theme';
 import App from './App';
 
