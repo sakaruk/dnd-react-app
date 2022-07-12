@@ -6,7 +6,6 @@ import { Typography, Input, InputAdornment } from '@mui/material';
 
 import { Search as SearchIcon } from '@mui/icons-material';
 
-import Header from '../../components/common/Header';
 import SpellList from './SpellList';
 
 function Home() {
@@ -16,32 +15,27 @@ function Home() {
   const [searchData, setSearchData] = useState<string>('');
 
   return (
-    <>
-      <Header />
+    <Container>
+      <Typography variant="h2" component="h1" gutterBottom>
+        Spell List
+      </Typography>
 
-      <Container>
-        <Typography variant="h2" component="h1" gutterBottom>
-          Spell List
-        </Typography>
+      <Input
+        autoComplete="off"
+        fullWidth
+        id="search-spell-input"
+        placeholder="Search"
+        value={searchData}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearchData(event.target.value)}
+        endAdornment={
+          <InputAdornment position="start">
+            <SearchIcon />
+          </InputAdornment>
+        }
+      />
 
-        <Input
-          autoComplete="off"
-          fullWidth
-          id="search-spell-input"
-          value={searchData}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setSearchData(event.target.value)
-          }
-          endAdornment={
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          }
-        />
-
-        <SpellList searchData={searchData} />
-      </Container>
-    </>
+      <SpellList searchData={searchData} />
+    </Container>
   );
 }
 

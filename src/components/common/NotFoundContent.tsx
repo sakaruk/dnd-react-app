@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 
 function NotFoundContent() {
   return (
-    <Container>
+    <Container data-testid="notFoundContainer">
       <h1>Sorry we did not find the content you were looking for.</h1>
 
       <p>

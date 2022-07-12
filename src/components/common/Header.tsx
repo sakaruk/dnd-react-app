@@ -39,7 +39,7 @@ function Header() {
   };
 
   return (
-    <AppBar sx={{ marginBottom: '15px' }} position="static">
+    <AppBar data-testid="headerAppBar" sx={{ marginBottom: '15px' }} position="static">
       <Container>
         <Toolbar disableGutters>
           <Typography
@@ -55,7 +55,7 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            <Link to="/">
+            <Link data-testid="headerMenuIconLeft" to="/">
               <img src="/dnd-logo.png" alt="Main logo" style={{ maxHeight: '80px' }} />
             </Link>
           </Typography>
@@ -73,6 +73,7 @@ function Header() {
             </IconButton>
             <Menu
               id="menu-appbar"
+              data-testid="headerMenu"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -112,13 +113,13 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            <Link to="/">
+            <Link data-testid="headerMenuIconCenter" to="/">
               <img src="/dnd-logo.png" alt="Main logo Center" style={{ maxHeight: '80px' }} />
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={page.link} key={page.link}>
+              <Link data-testid="headerMenuButtons" to={page.link} key={page.link}>
                 <Button key={page.link} sx={{ my: 2, color: 'white', display: 'block' }}>
                   {page.text}
                 </Button>

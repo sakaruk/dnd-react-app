@@ -65,7 +65,7 @@ function SpellList({ searchData }: SpellListProps) {
   }
 
   return (
-    <List>
+    <List data-testid="spellListContainer">
       {displaySpell.map((spellSingle: SpellType.Single) => (
         <ListItem
           key={spellSingle.index}
@@ -73,7 +73,11 @@ function SpellList({ searchData }: SpellListProps) {
         >
           <ListItemText
             primary={
-              <Link style={{ display: 'block' }} to={`spells/${spellSingle.index}`}>
+              <Link
+                data-testid="spellListLink"
+                style={{ display: 'block' }}
+                to={`spells/${spellSingle.index}`}
+              >
                 {spellSingle.name}
               </Link>
             }

@@ -22,7 +22,8 @@
         "no-param-reassign": "off"
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jest": true
     },
     "ignorePatterns": []
 }
