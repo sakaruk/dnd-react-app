@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createRoot } from 'react-dom/client';
+import { createRoot, Root } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,13 +8,28 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import { Provider } from 'react-redux';
 
-import store from './lib/store';
+import { setupStore } from './lib/store';
 import theme from './lib/theme';
 import App from './App';
 
-const container = document.getElementById('root')!;
-const root = createRoot(container);
+const container: HTMLElement = document.getElementById('root')!;
+const root: Root = createRoot(container);
 
+let initialFavourite: Array<string> = [];
+
+/**
+ * Getting data from localStorage if available
+ */
+if (localStorage) {
+  const favSpell = localStorage.getItem('favSpell');
+  if (favSpell) {
+    try {
+      initialFavourite = JSON.parse(favSpell);
+    } catch (e) {
+      console.error('Cannot parse localstoreg data', e);
+    }
+  }
+}
 /**
  * Providers used:
  * React.StrictMode for strict mode in React development
@@ -28,7 +43,7 @@ const root = createRoot(container);
  */
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={setupStore({ spell: { favouriteSpells: initialFavourite } })}>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />

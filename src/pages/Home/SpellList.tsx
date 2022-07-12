@@ -68,6 +68,7 @@ function SpellList({ searchData }: SpellListProps) {
     <List data-testid="spellListContainer">
       {displaySpell.map((spellSingle: SpellType.Single) => (
         <ListItem
+          data-testid="spellListItem"
           key={spellSingle.index}
           secondaryAction={<FavouriteIcon spellIndex={spellSingle.index} />}
         >

@@ -7,18 +7,15 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 import { UserEvent } from '@testing-library/user-event/dist/types/setup';
 
-import { Provider } from 'react-redux';
-
 import App from '../App';
-import store from '../lib/store';
+import renderWithProviders from '../lib/redux-test';
 
 test('check all the navigations / header and pages', async () => {
   const user: UserEvent = userEvent.setup();
-  render(
-    <Provider store={store}>
+  renderWithProviders(
+    <BrowserRouter>
       <App />
-    </Provider>,
-    { wrapper: BrowserRouter }
+    </BrowserRouter>
   );
 
   // check if the heading is in the route

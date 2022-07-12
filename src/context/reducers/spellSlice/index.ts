@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { RootState } from '../../../types/redux-types';
+import { RootState } from '../../../lib/store';
 
 export interface SpellState {
   favouriteSpells: Array<string>;
@@ -12,23 +12,8 @@ export interface FavouritePayload {
   currentState: 'active' | 'inactive';
 }
 
-let initialFavourite: Array<string> = [];
-/**
- * Getting data from localStorage if available
- */
-if (localStorage) {
-  const favSpell = localStorage.getItem('favSpell');
-  if (favSpell) {
-    try {
-      initialFavourite = JSON.parse(favSpell);
-    } catch (e) {
-      console.error('Cannot parse localstoreg data', e);
-    }
-  }
-}
-
 const initialState: SpellState = {
-  favouriteSpells: initialFavourite,
+  favouriteSpells: [],
 };
 
 export const spellSlice = createSlice({
