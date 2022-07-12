@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { List, ListItem, ListItemText, Typography, CircularProgress } from '@mui/material';
+import { List, ListItem, ListItemText, Typography, CircularProgress, Box } from '@mui/material';
 
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,18 @@ function SpellList({ searchData }: SpellListProps) {
    * Returns progress bar when it is loading
    */
   if (isLoading) {
-    return <CircularProgress />;
+    return (
+      <Box
+        sx={{
+          marginTop: '1em',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
   }
 
   /**

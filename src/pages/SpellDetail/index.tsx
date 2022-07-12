@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import { Chip, CircularProgress, Container, Grid, Stack, Typography } from '@mui/material';
+import { Chip, CircularProgress, Container, Grid, Stack, Typography, Box } from '@mui/material';
 
 import Header from '../../components/common/Header';
 import SpellType from '../../types/spell-types';
@@ -20,7 +20,18 @@ function SpellDetail() {
         <Header />
 
         <Container>
-          {isLoading && <CircularProgress />}
+          {isLoading && (
+            <Box
+              sx={{
+                marginTop: '1em',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <CircularProgress />
+            </Box>
+          )}
           {error && <NotFoundContent />}
           {!error && !isLoading && spellDetail && (
             <>
