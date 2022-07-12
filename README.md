@@ -1,8 +1,15 @@
 # Dungeon and dragon app using React
 An app to display the spells of dungeon and drangons using [DnD 5 API](http://www.dnd5eapi.co/)
 
+You can find the demo to this app on [Cloudflare pages](https://dnd-react-app.pages.dev)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+
+# Setting up the App
+
+- Clone the repo
+- Go inside the project folder
+- Run the command `npm install` to install dependencies
+
 
 # Tools Used to build app
 
